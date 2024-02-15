@@ -4,10 +4,18 @@ import styles from "@/components/Main/Main.module.css";
 import { Footer } from "@/components/Footer";
 import { Links } from "@/components/Links";
 import { Headline } from "@/components/Headline";
+import { useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export function Main(props) {
+  useEffect(() => {
+    document.body.style.backgroundColor = "lightblue";
+    return () => {
+      document.body.style.backgroundColor = "";
+    };
+  }, []);
+
   return (
     <main className={`${styles.main} ${inter.className}`}>
       <div className={styles.description}>
