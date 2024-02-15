@@ -6,11 +6,12 @@ import { Header } from "@/components/Header";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  // const handleClick = useCallback((e) => {
-  //   console.log(e.target.href);
-  //   e.preventDefault();
-  //   alert(123);
-  // }, []);
+  const [foo, setFoo] = useState(1);
+
+  // let foo = 1;
+  const handleClick = (e) => {
+    setFoo((foo) => foo + 1);
+  };
 
   return (
     <>
@@ -18,9 +19,10 @@ export default function Home() {
         <title>indes page</title>
       </Head>
       <Header />
-      {/* <a href="/about" onClick={handleClick}>
+      <h1>{foo}</h1>
+      <button href="/about" onClick={handleClick}>
         ボタン
-      </a> */}
+      </button>
       <Main page="index" />
     </>
   );
