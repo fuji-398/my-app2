@@ -9,12 +9,13 @@ import { useEffect } from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 export function Main(props) {
-  useEffect(() => {
-    document.body.style.backgroundColor = "lightblue";
-    return () => {
-      document.body.style.backgroundColor = "";
-    };
-  }, []);
+  // useEffect(() => {
+  //   console.log("foo");
+  //   document.body.style.backgroundColor = "lightblue";
+  //   return () => {
+  //     document.body.style.backgroundColor = "";
+  //   };
+  // }, []);
 
   return (
     <main className={`${styles.main} ${inter.className}`}>
