@@ -15,7 +15,10 @@ export function Headline(props) {
         <h2>
           {props.h2} page <span>-&gt;</span>
         </h2>
-        <p>Find in-depth information about Next.js features and&nbsp;API.</p>
+        <p>
+          Find in-depth information about Next.js features and&nbsp;API.
+          {props.children}
+        </p>
       </a>
     </div>
   );
