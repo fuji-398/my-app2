@@ -2,6 +2,7 @@ import Head from "next/head";
 import { Inter } from "next/font/google";
 import { Main } from "@/components/Main";
 import { Header } from "@/components/Header";
+import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,6 +12,7 @@ export default function Home() {
   // let foo = 1;
   const handleClick = (e) => {
     setFoo((foo) => foo + 1);
+    // foo = foo + 1;
   };
 
   return (
