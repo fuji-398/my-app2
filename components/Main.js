@@ -46,7 +46,7 @@ export function Main(props) {
       </div>
 
       <div className={styles.grid}>
-        <Headline h2="props.page">
+        <Headline h2={props.page}>
           code={<code className={styles.code}>pages/{props.page}.js</code>}{" "}
         </Headline>
 
