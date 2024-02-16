@@ -3,7 +3,7 @@ import styles from "@/components/Links/Links.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export function Links() {
+export const Links = () => {
   return (
     <a
       href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
@@ -17,4 +17,4 @@ export function Links() {
       <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
     </a>
   );
-}
+};

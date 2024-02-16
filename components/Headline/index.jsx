@@ -3,7 +3,7 @@ import styles from "@/components/Headline/Headline.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export function Headline(props) {
+export const Headline = (props) => {
   return (
     <div>
       <a
@@ -22,4 +22,4 @@ export function Headline(props) {
       </a>
     </div>
   );
-}
+};

@@ -3,7 +3,7 @@ import styles from "@/components/Footer/Footer.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export function Footer({ items, handleReduce }) {
+export const Footer = ({ items, handleReduce }) => {
   return (
     <div>
       <button onClick={handleReduce}>減らす</button>
@@ -25,4 +25,4 @@ export function Footer({ items, handleReduce }) {
       })}
     </div>
   );
-}
+};
