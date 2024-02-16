@@ -3,25 +3,11 @@ import styles from "@/components/Footer/Footer.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const ITEMS = [
-  {
-    href: "https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app",
-    title: "Templates",
-    description:
-      "Discover and deploy boilerplate example Next.js&nbsp;projects.",
-  },
-  {
-    href: "https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app",
-    title: "Deploy",
-    description:
-      "Instantly deploy your Next.js site to a shareable URL with&nbsp;Vercel.",
-  },
-];
-
-export function Footer() {
+export function Footer({ items, handleReduce }) {
   return (
     <div>
-      {ITEMS.map((item) => {
+      <button onClick={handleReduce}>減らす</button>
+      {items.map((item) => {
         return (
           <a
             key={item.href}

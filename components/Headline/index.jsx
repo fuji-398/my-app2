@@ -16,8 +16,8 @@ export function Headline(props) {
           {props.h2} page <span>-&gt;</span>
         </h2>
         <p>
-          Find in-depth information about Next.js features and&nbsp;API.
-          {props.children}
+          アイテムの数は
+          {props.children}個です
         </p>
       </a>
     </div>

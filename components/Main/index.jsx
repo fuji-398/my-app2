@@ -4,18 +4,32 @@ import styles from "@/components/Main/Main.module.css";
 import { Footer } from "@/components/Footer";
 import { Links } from "@/components/Links";
 import { Headline } from "@/components/Headline";
-import { useEffect } from "react";
+import { useCallback, useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const ITEMS = [
+  {
+    href: "https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app",
+    title: "Templates",
+    description:
+      "Discover and deploy boilerplate example Next.js&nbsp;projects.",
+  },
+  {
+    href: "https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app",
+    title: "Deploy",
+    description:
+      "Instantly deploy your Next.js site to a shareable URL with&nbsp;Vercel.",
+  },
+];
+
 export function Main(props) {
-  // useEffect(() => {
-  //   console.log("foo");
-  //   document.body.style.backgroundColor = "lightblue";
-  //   return () => {
-  //     document.body.style.backgroundColor = "";
-  //   };
-  // }, []);
+  const [items, setItems] = useState(ITEMS);
+  const handleReduce = useCallback(() => {
+    setItems((prevItems) => {
+      return prevItems.slice(0, prevItems.length - 1);
+    });
+  }, []);
 
   return (
     <main className={`${styles.main} ${inter.className}`}>
@@ -56,12 +70,12 @@ export function Main(props) {
 
       <div className={styles.grid}>
         <Headline h2={props.page}>
-          code={<code className={styles.code}>pages/{props.page}.js</code>}{" "}
+          code={<code className={styles.code}>{items.length}</code>}{" "}
         </Headline>
 
         <Links />
 
-        <Footer />
+        <Footer items={items} handleReduce={handleReduce} />
       </div>
     </main>
   );
